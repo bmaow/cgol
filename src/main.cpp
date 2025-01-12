@@ -480,7 +480,7 @@ int main(int argv, char** argc)
 			timeStep.reset();
 		}
 
-		if ((!pause || iterate) && calculate)
+		if ((!pause && calculate) || iterate)
 			generation++;
 
 
@@ -491,7 +491,7 @@ int main(int argv, char** argc)
 			{
 				Cell& cell = spaces[i][j];
 
-				if ((!pause || iterate) && calculate)
+				if ((!pause && calculate) || iterate)
 				{
 					// calculate cell generation
 					int neighbors = 0;
